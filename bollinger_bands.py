@@ -3,6 +3,7 @@ import pandas as pd
 
 client = Client("TYPE YOUR API KEY HERE","TYPE YOUR SECRET KEY HERE")
 
+#function to get market data for a coin(symbol) and for interval(ex. 1h) for lookback length.
 def gethourdata(symbol, interval, lookback):
     frame = pd.DataFrame(client.get_historical_klines(symbol,interval,lookback + 'hours ago UTC'))
     frame=frame.iloc[:,:6]
