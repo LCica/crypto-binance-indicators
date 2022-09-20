@@ -22,11 +22,10 @@ def Ichimoku_Cloud(symbol, interval, lookback):
     low52=df.Low.rolling(52).min()
     df['tenkan_sen']=(high9+low9)/2
     df['kijun_sen']=(high26+low26)/2
-    df['senkou_A']=((df.tenkan_sen+df.kijun_sen)/2).shift(26)
-    df['senkou_B']=((high52+low52)/2).shift(26)
+    df['senkou_A']=((df.tenkan_sen+df.kijun_sen)/2)
+    df['senkou_B']=((high52+low52)/2)
     df['chikou']=df.Close.shift(-26)
     df=df.iloc[26:]
-    return (df['tenkan_sen'][-1],df['kijun_sen'][-1],df['senkou_A'][-1],df['senkou_B'][-1],df['chikou'][-27])
-while True:
-    print(Ichimoku_Cloud('BTCUSDT','1h','100'))
-    time.sleep(1)
+    return (df['tenkan_sen'][-1],df['kijun_sen'][-1],df['chikou'][-27],df['senkou_A'][-1],df['senkou_B'][-1])
+
+#Example of calling the code:Ichimoku_Cloud('BTCUSDT','1h','100')
