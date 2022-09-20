@@ -1,7 +1,6 @@
-from ast import While
 from binance import Client
 import pandas as pd 
-import time
+
 client = Client("TYPE YOUR API KEY HERE","TYPE YOUR SECRET KEY HERE")
 
 def gethourdata(symbol, interval, lookback):
