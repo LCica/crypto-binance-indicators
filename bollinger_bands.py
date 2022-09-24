@@ -1,4 +1,3 @@
-from binance import Client
 import pandas as pd 
 from getdata import gethourdata
 
