@@ -1,5 +1,5 @@
 import pandas as pd 
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 
 def mfm(df):
     df['MFM']=(2*df['Close']-df['Low']-df['High'])/(df['High']-df['Low'])

@@ -1,5 +1,5 @@
 import ta
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 import pandas as pd
 
 def tsi(symbol,interval,lookback,longlength,shortlength):

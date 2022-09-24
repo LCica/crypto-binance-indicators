@@ -1,5 +1,5 @@
 import pandas as pd 
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 
 
 def sma(data, window):

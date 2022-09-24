@@ -1,4 +1,4 @@
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 import ta
 import pandas as pd
 def Percentage_Volume_Oscillator(symbol,interval,lookback,longlength,shortlength,signallength):

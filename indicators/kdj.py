@@ -1,5 +1,5 @@
 import pandas as pd 
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 #finding lowest 'Low' on an interval length 9. 
 def low(df,i):
     lowest=df['Low'][i-1]

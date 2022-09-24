@@ -1,6 +1,6 @@
 import pandas as pd 
 import ta
-from getdata import gethourdata
+from indicators.getdata import gethourdata
 
 def macd(symbol,interval,lookback):
     df = gethourdata(symbol, interval, lookback)
