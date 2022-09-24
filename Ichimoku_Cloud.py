@@ -30,7 +30,7 @@ def Ichimoku_Cloud(symbol, interval, lookback):
     df['chikou']=df.Close.shift(-26)
     df=df.iloc[26:]
     return df
-print(Ichimoku_Cloud('BTCUSDT','1h','100'))   
+
 #Example of calling the code:Ichimoku_Cloud('BTCUSDT','1h','100')
 
 def cloud_color(symbol, interval, lookback):
