@@ -1,19 +1,5 @@
-from cmath import nan
-from binance import Client
 import pandas as pd 
-
-client = Client("TYPE YOUR API KEY HERE","TYPE YOUR SECRET KEY HERE")
-
-def gethourdata(symbol, interval, lookback):
-    frame = pd.DataFrame(client.get_historical_klines(symbol,interval,lookback + 'hours ago UTC'))
-    frame=frame.iloc[:,:6]
-    frame.columns=['Time','Open','High','Low','Close','Volume']
-    frame=frame.set_index('Time')
-    frame.index=pd.to_datetime(frame.index, unit='ms')
-    frame= frame.astype(float)
-    return frame
-
-   
+from getdata import gethourdata
 
 def Ichimoku_Cloud(symbol, interval, lookback):
     df=gethourdata('BTCUSDT','1h','100')
@@ -32,7 +18,6 @@ def Ichimoku_Cloud(symbol, interval, lookback):
     return df
 
 #Example of calling the code:Ichimoku_Cloud('BTCUSDT','1h','100')
-
 def cloud_color(symbol, interval, lookback):
     df=Ichimoku_Cloud(symbol, interval, lookback)
     k=[]
