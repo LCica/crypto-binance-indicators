@@ -10,4 +10,4 @@ def obv(symbol,interval,lookback):
             k-=float(df['Volume'][i])
     return k
 
-#Example Of Running The Code:obv('BTCUSDT','1h','1000')
+#Example Of Running The Code: obv('BTCUSDT','1h','1000')
