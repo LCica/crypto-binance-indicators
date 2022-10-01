@@ -1,8 +1,7 @@
 import pandas as pd 
 from indicators.getdata import gethourdata
 
-def Ichimoku_Cloud(symbol, interval, lookback):
-    df=gethourdata('BTCUSDT','1h','100')
+def Ichimoku_Cloud(df):
     high9=df.High.rolling(9).max()
     high26=df.High.rolling(26).max()
     high52=df.High.rolling(52).max()
@@ -17,9 +16,9 @@ def Ichimoku_Cloud(symbol, interval, lookback):
     df=df.iloc[26:]
     return df
 
-#Example of calling the code:Ichimoku_Cloud('BTCUSDT','1h','100')
-def cloud_color(symbol, interval, lookback):
-    df=Ichimoku_Cloud(symbol, interval, lookback)
+#Example of calling the code:Ichimoku_Cloud(gethourdata('BTCUSDT','1h','100'))
+def cloud_color(df):
+    df=Ichimoku_Cloud(df)
     k=[]
     for i in range(0,len(df['Open'])):
         if float(df['senkou_A'][i])>=float(df['senkou_B'][i]):

@@ -1,12 +1,10 @@
-import pandas as pd 
 import ta
 from indicators.getdata import gethourdata
 
-def macd(symbol,interval,lookback):
-    df = gethourdata(symbol, interval, lookback)
+def macd(df):
     df['macd'] = ta.trend.macd(df.Close)
     df.dropna(inplace=True)
     return df['macd'][-1]
 
 
-#EXAMPLE OF CODE: macd('BTCUSDT','1h','100')
+#EXAMPLE OF CODE: macd(gethourdata('BTCUSDT','1h','100'))
