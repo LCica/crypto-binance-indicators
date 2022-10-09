@@ -1,9 +1,9 @@
 import smtplib, ssl
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = "kojikurac2k1@gmail.com"  
-receiver_email = "kojikurac2k1+binance@gmail.com"  
-password = "fitlrgcrbmlrkpxu"
+sender_email = "Type your sender email here!"  
+receiver_email = "Type your receiver email here!"
+password = "Type your password here!"
 context = ssl.create_default_context()
 
 def sell_message(price):
