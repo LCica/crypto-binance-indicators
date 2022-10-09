@@ -8,4 +8,6 @@ def vwap_first(df):
 def vwap(df):
     df = df.groupby(df.index.date, group_keys=False).apply(vwap_first)
     return df['vwap'][-1]
-#Example of calling the code:vwap(gethourdata('BTCUSDT','1h','500'))
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#vwap(df)

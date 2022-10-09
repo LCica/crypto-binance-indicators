@@ -1,4 +1,3 @@
-import pandas as pd 
 from indicators.getdata import gethourdata
 #finding lowest 'Low' on an interval length 9. 
 def low(df,i):
@@ -35,5 +34,7 @@ def kdj(df):
         j=3*k[-1]-2*d[-1]
     return (k[-1],d[-1],j)
 
-#EXAMPLE OF CALLING THE CODE: kdj(gethourdata('BTCUSDT','1h','30'))
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#kdj(df)
 

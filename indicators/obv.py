@@ -9,4 +9,6 @@ def obv(df):
             k-=float(df['Volume'][i])
     return k
 
-#Example Of Running The Code: obv(gethourdata('BTCUSDT','1h','1000'))
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#obv(df)

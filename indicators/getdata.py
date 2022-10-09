@@ -11,3 +11,10 @@ def gethourdata(symbol, interval, lookback):
     frame.index=pd.to_datetime(frame.index, unit='ms')
     frame= frame.astype(float)
     return frame
+
+def get_all_ticker(coin):
+    client=Client("TYPE YOUR API KEY HERE","TYPE YOUR SECRET KEY HERE")
+    prices = client.get_all_tickers()
+    for price in prices:
+        if price['symbol']==coin:
+            return price['price']

@@ -31,4 +31,6 @@ def money_ratio(df,period):
 def mfi(df,period):
   return 100-100/(1+money_ratio(df,period))
 
-#Example Of Calling The Code:mfi(gethourdata('BTCUSDT','1h','50'),14)
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#mfi(df,14)

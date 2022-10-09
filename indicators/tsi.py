@@ -7,4 +7,6 @@ def tsi(df,longlength,shortlength):
     df.dropna(inplace=True)
     return df['tsi'][-1]
 #I reccomend lookback to be more than 100 and less than 500
-#Example of calling the code:tsi(gethourdata('BTCUSDT','1h','500'),25,13)
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#tsi(df,25,13)

@@ -7,4 +7,6 @@ def rsi(df,length):
     df.dropna(inplace=True)
     return df['rsi'][-1]
 
-#EXAMPLE OF CODE: rsi(gethourdata('BTCUSDT','1h','30'),9)
+#Example Of running the code: 
+#df=gethourdata('BTCUSDT','1h','100')
+#rsi(df,9)
