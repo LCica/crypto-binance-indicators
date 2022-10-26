@@ -1,9 +1,9 @@
 import smtplib, ssl
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = "Type your sender email here!"  
-receiver_email = "Type your receiver email here!"
-password = "Type your password here!"
+sender_email = "kreten2k1@gmail.com"  
+receiver_email = "kreten2k1+binance@gmail.com"
+password = "tkubcawnuudmwzci"
 context = ssl.create_default_context()
 
 def sell_message(price):
@@ -30,5 +30,14 @@ def percentage(proc,buy,sell):
         Your buy was at {} EUR,
         Your sell was at {} EUR,
         Your percentage profit/loss is: {} %""".format(buy,sell,proc)
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message2)
+
+def error():
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:    
+        message2 = """\
+        Subject: Binance message
+
+        There was an error!!"""
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, message2)
