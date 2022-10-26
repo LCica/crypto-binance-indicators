@@ -1,9 +1,9 @@
 import smtplib, ssl
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = "kreten2k1@gmail.com"  
-receiver_email = "kreten2k1+binance@gmail.com"
-password = "tkubcawnuudmwzci"
+sender_gmail = "Type In Sender Gmail"  
+receiver_gmail = "Type In Receiver Gmail"
+password = "Type In Password"
 context = ssl.create_default_context()
 
 def sell_message(price):
@@ -12,16 +12,16 @@ def sell_message(price):
         Subject: Binance message
 
         You sold for: {} EUR""".format(price)           
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message1)
+        server.login(sender_gmail, password)
+        server.sendmail(sender_gmail, receiver_gmail, message1)
 def buy_message(price):
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:    
         message2 = """\
         Subject: Binance message
 
         You bought for: {} EUR""".format(price)
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message2)
+        server.login(sender_gmail, password)
+        server.sendmail(sender_gmail, receiver_gmail, message2)
 def percentage(proc,buy,sell):
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:    
         message2 = """\
@@ -30,8 +30,8 @@ def percentage(proc,buy,sell):
         Your buy was at {} EUR,
         Your sell was at {} EUR,
         Your percentage profit/loss is: {} %""".format(buy,sell,proc)
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message2)
+        server.login(sender_gmail, password)
+        server.sendmail(sender_gmail, receiver_gmail, message2)
 
 def error():
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:    
@@ -39,5 +39,5 @@ def error():
         Subject: Binance message
 
         There was an error!!"""
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message2)
+        server.login(sender_gmail, password)
+        server.sendmail(sender_gmail, receiver_gmail, message2)
