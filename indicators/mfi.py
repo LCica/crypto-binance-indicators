@@ -1,6 +1,5 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-import time 
 from getdata import gethourdata
 
 def typical_price(df):
